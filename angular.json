@@ -31,6 +31,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -93,7 +94,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
+            "styles": [              
               "src/styles.scss"
             ],
             "scripts": []
@@ -127,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "angular-ecommerce"
+  "defaultProject": "angular-ecommerce",
+  "cli": {
+    "analytics": "cf6334f9-a97d-431d-b865-40ebc20b9d77"
+  }
 }

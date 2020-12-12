@@ -1,8 +1,4 @@
 <div>
-<h3>Product List</h3>
-{{product.name}}
-<!-- <img src="{{}}" alt="">
-<textarea name="" id="" cols="{{30}}" rows="{{10}}"></textarea> -->
-
-<app-products></app-products>
+<h3>{{title}}</h3>
+    <app-product-list (callParentFunc)="callParent($event)" [myClass]="myClass" [products]="products"></app-product-list>
 </div>

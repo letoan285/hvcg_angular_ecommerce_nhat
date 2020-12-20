@@ -1,22 +1,21 @@
-<div class="row product">
-    <div class="col-4" *ngFor="let product of products">
-        <div [ngClass]="myClass">
-            <div class="card-header"><h5>{{product.name}}</h5></div>
-            <div class="card-body">
-                <div class="product-item__image">
-                    <img class="image" src="{{product.src}}" alt="">
-                </div>
-                <div>
-                    <p>{{ renderStock(product.stock) }}</p>
-                </div>
-                <strong class="product-item__price">Price:$ {{ product.price }} </strong>
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2>{{product.name}}</h2>
+            <hr>
+            <p>{{product.description}}</p>
+            <strong>{{product.price}}</strong>
 
-            </div>
-
-            <div class="card-footer">
-                <button class="btn btn-primary" (click)="handleAddToCart(product.id)">Add To Cart</button>
-                <button class="btn btn-warning" (click)="passToParent(product.name)"> View More</button>
-            </div>
         </div>
     </div>
+
+
+    <div class="row product">
+        <div class="col-4" *ngFor="let product of products">
+            <app-product-item [product]="product" [btnText]="btnText" (showDetail)="showDetail($event)"></app-product-item>
+
+        </div>
+
+    </div>
+    
 </div>

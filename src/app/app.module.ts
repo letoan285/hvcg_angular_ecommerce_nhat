@@ -7,6 +7,13 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { FooterComponent } from './footer/footer.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { UsersComponent } from './users/users.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { CartDetailComponent } from './cart-detail/cart-detail.component';
+import { ProductItemComponent } from './product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +21,14 @@ import { ProductListComponent } from './product-list/product-list.component';
     HomeComponent,
     HeaderComponent,
     ProductsComponent,
-    ProductListComponent
+    ProductListComponent,
+    FooterComponent,
+    NotFoundComponent,
+    UsersComponent,
+    ContactUsComponent,
+    ProductDetailComponent,
+    CartDetailComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,

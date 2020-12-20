@@ -1,0 +1,23 @@
+<div [ngClass]="myClass">
+    <h2>{{title}}</h2>
+    <div class="card-header">
+        <h5>{{product.name}}</h5>
+    </div>
+    <div class="card-body">
+        <div class="product-item__image">
+            <a routerLink="/products/{{product.id}}">
+                <img width="200" class="image" src="{{product.src}}" alt="">
+            </a>
+        </div>
+        <div>
+            <p>{{ renderStock(product.stock) }}</p>
+        </div>
+        <strong class="product-item__price">Price:$ {{ product.price }} </strong>
+
+    </div>
+
+    <div class="card-footer">
+        <button class="btn btn-primary" (click)="handleAddToCart(product.id)">{{btnText.addToCart}}</button>
+        <button class="btn btn-warning" (click)="viewDetail(product)"> {{btnText.viewMore}} </button>
+    </div>
+</div>

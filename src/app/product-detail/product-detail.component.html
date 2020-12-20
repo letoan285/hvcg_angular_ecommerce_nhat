@@ -1,0 +1,26 @@
+<div class="container product-detail">
+   <div class="row product-detail__item">
+       <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-header">
+                    <h2>{{product.name}}</h2>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <img width="300" src="{{product.src}}" alt="">
+                    </div>
+                    <div>
+                        <p>{{product.description}}</p>
+                    </div>
+                    <div>
+                        <strong>price: $ {{product.price}}</strong>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-warning" routerLink="/products">Back</a>
+                    <button class="btn btn-primary" (click)="addToCart(product)">Add To Cart</button>
+                </div>
+            </div>
+       </div>
+   </div>
+</div>

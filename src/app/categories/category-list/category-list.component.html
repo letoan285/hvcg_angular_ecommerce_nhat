@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h5 *ngIf="isAdmin; else userTemplate">Hello Admin</h5>
+            
+        </div>
+    </div>
+
+    <ng-template #userTemplate>
+        <h5 >Hello User</h5>
+    </ng-template>
+
+    <!-- <input type="text" #myInput> -->
+
+    
+    <p [ngStyle]="{color: 'red'}" [ngClass]="categoryTitle">category-list works!</p>
+    <a class="btn btn-success" routerLink="./add">Add New</a>
+    <div class="row">
+        <div class="col-12">
+            <ul>
+                <li *ngFor="let item of categories">{{item.name}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" [ngSwitch]="date">
+            <h4 *ngSwitchCase="1">Today is Monday</h4>
+            <h4 *ngSwitchCase="2">Today is Tuesday</h4>
+            <h4 *ngSwitchCase="3">Today is Wednesday</h4>
+            <h4 *ngSwitchCase="4">Today is Thursday</h4>
+            <h4 *ngSwitchCase="5">Today is Friday</h4>
+            <h4 *ngSwitchCase="6">Today is Saturday</h4>
+            <h4 *ngSwitchCase="7">Today is Sunday</h4>
+            <h4 *ngSwitchDefault >Not day of the week</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h3>Categories list</h3>
+            <p>{{ categories|json }}</p>
+            <p><strong>{{categories[2].name | uppercase}}</strong></p>
+            <p>{{myName|titlecase|uppercase}}</p>
+        </div>
+    </div>
+    
+    
+</div>

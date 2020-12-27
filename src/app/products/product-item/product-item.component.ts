@@ -9,9 +9,11 @@ export class ProductItemComponent implements OnInit {
 
   @Input() product: any;
   @Input() btnText : any;
+  title = ''
   constructor() { }
 
   ngOnInit(): void {
+    console.log('product item')
   }
 
   @Output() showDetail = new EventEmitter();
@@ -27,5 +29,6 @@ export class ProductItemComponent implements OnInit {
     this.showDetail.emit(product);
     // alert(product.name)
   }
+  handleAddToCart(productId: any){}
 
 }

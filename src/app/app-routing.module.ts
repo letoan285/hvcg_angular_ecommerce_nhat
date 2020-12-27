@@ -4,18 +4,29 @@ import { CartDetailComponent } from './cart-detail/cart-detail.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { AddComponent } from './users/add/add.component';
+import { UserDetailComponent } from './users/user-detail/user-detail.component';
+import { UserListComponent } from './users/user-list/user-list.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'products', component: ProductListComponent},
-  {path: 'products/:id', component: ProductDetailComponent},
-  {path: 'carts/cart-detail/:id', component: CartDetailComponent},
-  {path: 'users', component: UsersComponent},
+  {path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)},
+  {
+    path: 'users/:id', component: UsersComponent,
+    // path: 'users', redirectTo: 'user-list',
+    children: [
+      {path: 'add', component: AddComponent},
+      {path: 'detail/:id', component: UserDetailComponent}
+    ]
+  },
   {path: 'contact-us', component: ContactUsComponent},
+  {
+    path: 'categories', loadChildren: () => import('./categories/categories.module').then(m => m.CategoriesModule)
+  },
   {path: "**", component: NotFoundComponent},
 ];
 

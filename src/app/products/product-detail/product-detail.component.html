@@ -4,6 +4,7 @@
             <div class="card">
                 <div class="card-header">
                     <h2>{{product.name}}</h2>
+                    id: {{productId}}
                 </div>
                 <div class="card-body">
                     <div>
@@ -20,6 +21,10 @@
                     <a class="btn btn-warning" routerLink="/products">Back</a>
                     <button class="btn btn-primary" (click)="addToCart(product)">Add To Cart</button>
                 </div>
+            </div>
+            <div>
+                <button class="btn btn-info float-left" (click)="goPrevious()">Previous</button>
+                <button class="btn btn-secondary float-right" (click)="goNext()">Next</button>
             </div>
        </div>
    </div>
